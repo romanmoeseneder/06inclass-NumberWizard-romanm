@@ -22,26 +22,30 @@ public class GameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             min = guess;
             guessNext();
             Debug.Log("Higher");
-        }
-
+        } 
+        */
+/*
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             max = guess;
             guessNext();
             Debug.Log("Lower");
         }
+*/
 
+/*
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("correct Guess");
             SceneManager.LoadScene("FinishedScene", LoadSceneMode.Single);
         }
-
+*/
     }
 
     void guessNext()
@@ -49,4 +53,24 @@ public class GameScript : MonoBehaviour
         guess = (min + max) / 2;
         textGuess.text = guess.ToString();
     }
+
+   public void ButtonDown() 
+    { 
+       min = guess;
+       guessNext();
+       Debug.Log("Higher");
+    }
+
+     public void ButtonUP() 
+    { 
+       max = guess;
+       guessNext();
+       Debug.Log("Lower");
+    }
+
+    public void CorrectGuess()
+        {
+            Debug.Log("correct Guess");
+            SceneManager.LoadScene("FinishedScene", LoadSceneMode.Single);
+        }
 }
